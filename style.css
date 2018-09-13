@@ -1,0 +1,12 @@
+
+#background {
+	background-image: url('assets/background.png');
+	height: 800px;
+	width: 1200px;
+}
+
+#hero {
+	background-image: url('assets/hero.png');
+	height: 50px;
+	width: 50px;
+}
