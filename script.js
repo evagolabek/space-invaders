@@ -10,7 +10,7 @@ var hero = {
 
 //detecting on keybord what the user is doing, which key is pressed
 
-
+//console.log(e.keyCode); //gives exact code of the key 
 // console.log(document);
 
 document.onkeydown = function(e) {
@@ -24,6 +24,10 @@ document.onkeydown = function(e) {
 		console.log("RIGHT");
 		hero.left = hero.left + 10;
 		moveHero()
+	}
+
+	else if (e.keyCode === 32){
+		console.log('FIRE');
 	}
 }
 
