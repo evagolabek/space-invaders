@@ -22,9 +22,10 @@ document.onkeydown = function(e) {
 	}
 	else if (e.keyCode === 39){
 		console.log("RIGHT");
+		hero.left = hero.left + 10;
+		moveHero()
 	}
 }
-
 
 
 function moveHero() {
