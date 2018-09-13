@@ -10,12 +10,24 @@ var hero = {
 
 //detecting on keybord what the user is doing, which key is pressed
 
+
+// console.log(document);
+
 document.onkeydown = function(e) {
-	console.log(e);
+	
 	if (e.keyCode === 37){
 		console.log("LEFT");
+		hero.left = hero.left - 10;
+		moveHero()
 	}
 	else if (e.keyCode === 39){
 		console.log("RIGHT");
 	}
 }
+
+
+
+function moveHero() {
+	document.getElementById("hero").style.left = hero.left + "px";
+}
+
