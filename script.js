@@ -8,6 +8,8 @@ var hero = {
 	left: 550
 };
 
+var missiles = [];
+
 //detecting on keybord what the user is doing, which key is pressed
 
 //console.log(e.keyCode); //gives exact code of the key 
@@ -27,12 +29,28 @@ document.onkeydown = function(e) {
 	}
 
 	else if (e.keyCode === 32){
-		console.log('FIRE');
+		console.log("FIRE");
+		missiles.push({
+			left: hero.left + 15,
+			top: hero.top 
+		})
+
+		drawMissiles()
 	}
 }
 
 
 function moveHero() {
 	document.getElementById("hero").style.left = hero.left + "px";
+}
+
+function drawMissiles() {
+	//alert('drawMissiles invoked');
+	document.getElementById('missiles').innerHTML = "";
+	for( var missile = 0; missile < missiles.length; missile = missile +1){
+		// alert('forloop invoked');
+		document.getElementById('missiles').innerHTML += 
+		`<div class='missile' style='left:${missiles[missile].left}px; top:${missiles[missile].top}px;'></div>`;
+	}
 }
 
