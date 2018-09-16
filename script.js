@@ -93,7 +93,8 @@ function collisionDetection() {
 				(missiles[missile].left >= enemies[enemy].left) &&
 				(missiles[missile].left <= enemies[enemy].left + 50)
 			){
-				console.log("HIT!");
+				enemies.splice(enemy, 1);
+				missiles.splice(missile, 1);
 			}
 		}
 	}
@@ -111,3 +112,9 @@ function gameLoop() {
 }
 
 gameLoop();
+
+
+//move hero top to down
+//move enemies
+//score system
+//different missiles
