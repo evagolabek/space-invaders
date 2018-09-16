@@ -1,4 +1,4 @@
-
+ 
 //creating the object (with properties: key & value)
 //in order to know where the hero is position on the screen it reflects exactly the css
 //using the value later it will reprint where the hero is
@@ -54,3 +54,17 @@ function drawMissiles() {
 	}
 }
 
+function moveMissiles(){
+	for(var missile = 0; missile < missiles.length; missile = missile + 1){
+		missiles[missile].top = missiles[missile].top -5 ;
+	}
+}
+
+function gameLoop(){
+	setTimeout(gameLoop, 1000)
+	moveMissiles();
+	drawMissiles();
+
+}
+
+gameLoop();
