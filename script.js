@@ -63,7 +63,7 @@ function drawMissiles() {
 	}
 }
 
-function moveMissiles(){
+function moveMissiles() {
 	for(var missile = 0; missile < missiles.length; missile = missile + 1){
 		missiles[missile].top = missiles[missile].top -5 ;
 	}
@@ -78,19 +78,35 @@ function drawEnemies() {
 	}
 }
 
-function moveEnemies(){
+function moveEnemies() {
 	for(var enemy = 0; enemy < enemies.length; enemy = enemy + 1){
 		enemies[enemy].top = enemies[enemy].top +3 ;
 	}
 }
 
+function collisionDetection() {
+	for(var enemy = 0; enemy < enemies.length; enemy = enemy +1){
+		for(var missile = 0; missile < missiles.length; missile = missile +1){
+			if(
+				(missiles[missile].top <= enemies[enemy].top + 50) &&
+				(missiles[missile].top >= enemies[enemy].top) &&
+				(missiles[missile].left >= enemies[enemy].left) &&
+				(missiles[missile].left <= enemies[enemy].left + 50)
+			){
+				console.log("HIT!");
+			}
+		}
+	}
+}
 
-function gameLoop(){
+
+function gameLoop() {
 	setTimeout(gameLoop, 100)
 	moveMissiles();
 	drawMissiles();
 	moveEnemies();
 	drawEnemies();
+	collisionDetection();
 
 }
 
