@@ -78,11 +78,18 @@ function drawEnemies() {
 	}
 }
 
+function moveEnemies(){
+	for(var enemy = 0; enemy < enemies.length; enemy = enemy + 1){
+		enemies[enemy].top = enemies[enemy].top +3 ;
+	}
+}
+
 
 function gameLoop(){
-	setTimeout(gameLoop, 1000)
+	setTimeout(gameLoop, 100)
 	moveMissiles();
 	drawMissiles();
+	moveEnemies();
 	drawEnemies();
 
 }
