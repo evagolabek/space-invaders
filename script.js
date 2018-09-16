@@ -10,6 +10,15 @@ var hero = {
 
 var missiles = [];
 
+var enemies  = [
+	{left: 200, top: 100},
+	{left: 300, top: 100},
+	{left: 400, top: 100},
+	{left: 500, top: 100},
+	{left: 600, top: 100},
+	{left: 700, top: 100},
+];
+
 //detecting on keybord what the user is doing, which key is pressed
 
 //console.log(e.keyCode); //gives exact code of the key 
@@ -60,10 +69,21 @@ function moveMissiles(){
 	}
 }
 
+function drawEnemies() {
+	//alert('drawMissiles invoked');
+	document.getElementById('enemies').innerHTML = "";
+	for( var enemy = 0; enemy < enemies.length; enemy = enemy +1){
+		document.getElementById('enemies').innerHTML += 
+		`<div class='enemy' style='left:${enemies[enemy].left}px; top:${enemies[enemy].top}px;'></div>`;
+	}
+}
+
+
 function gameLoop(){
 	setTimeout(gameLoop, 1000)
 	moveMissiles();
 	drawMissiles();
+	drawEnemies();
 
 }
 
